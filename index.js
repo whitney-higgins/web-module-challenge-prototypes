@@ -21,19 +21,19 @@ function Person(name, age) {
   this.stomach = [];
 }
 
-Person.prototype.eat = function (someFood){
-  if(this.stomach ){
-    this.stomach.push(someFood)
-  } 
-}
+Person.prototype.eat = function (someFood) {
+  if (this.stomach) {
+    this.stomach.push(someFood);
+  }
+};
 
-Person.prototype.poop = function (){
-  return this.stomach = []
-}
+Person.prototype.poop = function () {
+  return (this.stomach = []);
+};
 
-Person.prototype.toString = function (){
-  return `${this.name}, ${this.age} `
-}
+Person.prototype.toString = function () {
+  return `${this.name}, ${this.age} `;
+};
 
 /*
   TASK 2
@@ -58,10 +58,9 @@ function Car(model, milesPerGallon) {
   this.odometer = 0;
 }
 
-Car.prototype.fill = function (gallons){
-  return this.tank += gallons
-}
-
+Car.prototype.fill = function (gallons) {
+  return (this.tank += gallons);
+};
 
 /*
   TASK 3
@@ -72,37 +71,36 @@ Car.prototype.fill = function (gallons){
 */
 
 function Baby(name, age, favoriteToy) {
-  Person.call(this, name, age, favoriteToy)
-  this.favoriteToy = favoriteToy
+  Person.call(this, name, age, favoriteToy);
+  this.favoriteToy = favoriteToy;
 }
 
-Baby.prototype = Object.create(Person.prototype)
+Baby.prototype = Object.create(Person.prototype);
 
 Baby.prototype.play = function () {
-  return `Playing with ${this.favoriteToy}`
-}
-
+  return `Playing with ${this.favoriteToy}`;
+};
 
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Implicit binding happens when we invoke a function inside of a function using dot notation.
+  2. With Explicit binding we can force a function to use specific objects as "this" (.call(), .bind(), .apply())
+  3. In Global/Window binding "this" points to global object. [fallback option]
+  4. New binding is applied when a new object is created by a function constructor using the keyword 'new'. "This" points to the new object.
 */
 
 ///////// END OF CHALLENGE /////////
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
-function foo(){
-  console.log('its working!');
-  return 'bar';
+function foo() {
+  console.log("its working!");
+  return "bar";
 }
 foo();
 module.exports = {
   foo,
-  Person, 
+  Person,
   Car,
-  Baby
-}
+  Baby,
+};
